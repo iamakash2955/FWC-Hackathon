@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interior Designer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-3xl font-bold mb-8 text-blue-500">Interior Designer</h1>
+        
+        <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+            <nav class="w-full md:w-1/4 bg-gray-800 p-4 rounded-lg">
+                <ul>
+                    <li class="mb-2">
+                        <a href="#" class="text-blue-400 hover:text-blue-300">Home</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-blue-400 hover:text-blue-300">History</a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <main class="w-full md:w-3/4 space-y-4">
+                <div class="bg-gray-800 p-4 rounded-lg">
+                    <h2 class="text-xl font-semibold mb-4">Upload a photo or image</h2>
+                    <p class="mb-4">Upload an image of a room and let our AI generate a new design.</p>
+                    <button id="designButton" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                        Design this room
+                    </button>
+                </div>
+                
+                <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+                    <div class="w-full md:w-1/2">
+                        <label for="model" class="block mb-2">Model</label>
+                        <select id="model" class="w-full bg-gray-700 border border-gray-600 rounded px-3 py-2">
+                            <option value="modern">Modern</option>
+                            <option value="vintage">Vintage</option>
+                            <option value="minimalist">Minimalist</option>
+                            <option value="professional">Professional</option>
+                        </select>
+                    </div>
+                    <div class="w-full md:w-1/2">
+                        <label for="roomType" class="block mb-2">Room type</label>
+                        <select id="roomType" class="w-full bg-gray-700 border border-gray-600 rounded px-3 py-2">
+                            <option value="livingRoom">Living Room</option>
+                            <option value="bedroom">Bedroom</option>
+                            <option value="kitchen">Kitchen</option>
+                            <option value="bathroom">Bathroom</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+                    <div class="w-full md:w-1/2 bg-gray-800 p-4 rounded-lg">
+                        <div id="dragArea" class="drag-area flex items-center justify-center">
+                            <div class="text-center">
+                                <i class="fas fa-image text-4xl mb-2"></i>
+                                <p>Drag 'n drop your image here or click to upload</p>
+                            </div>
+                        </div>
+                        <input type="file" id="fileInput" class="hidden" accept="image/*">
+                    </div>
+                    <div class="w-full md:w-1/2 bg-gray-800 p-4 rounded-lg">
+                        <div id="outputArea" class="h-full flex items-center justify-center">
+                            <p>AI-generated output goes here</p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
